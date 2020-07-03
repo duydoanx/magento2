@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Checkout\Block\Cart\Item\Renderer">
-        <plugin name="Magenest_Movie::changeimage"
+    <type name="Magento\Checkout\Controller\Cart\Add">
+        <plugin name="Magenest_Movie::changeproduct"
                 type="Magenest\Movie\Plugin\Cart\CartImage" sortOrder="1" />
     </type>
 </config>
