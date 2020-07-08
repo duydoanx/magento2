@@ -1,21 +1,22 @@
 <?php
 
-
 namespace Magenest\Movie\Observer;
 
-
+use Psr\Log\LoggerInterface;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
+use Magento\Customer\Api\CustomerRepositoryInterface;
 
 class CustomerChangeName implements ObserverInterface
 {
     protected $_customerRepositoryInterface;
     protected $logger;
     protected $customer;
-    public function __construct(\Psr\Log\LoggerInterface $logger,
-                                \Magento\Customer\Api\CustomerRepositoryInterface $customerRepositoryInterface
-    )
-    {
+
+    public function __construct(
+        LoggerInterface $logger,
+        CustomerRepositoryInterface $customerRepositoryInterface
+    ) {
         $this->logger = $logger;
         $this->_customerRepositoryInterface = $customerRepositoryInterface;
     }
@@ -30,6 +31,6 @@ class CustomerChangeName implements ObserverInterface
             $customerData->setFirstName('Magenest');
             $this->_customerRepositoryInterface->save($customerData);
         }
-        return $this;
+
     }
 }

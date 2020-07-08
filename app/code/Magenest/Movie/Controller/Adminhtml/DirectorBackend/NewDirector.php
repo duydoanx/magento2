@@ -1,15 +1,13 @@
 <?php
 
-
 namespace Magenest\Movie\Controller\Adminhtml\DirectorBackend;
 
-
 use Magento\Backend\App\Action;
-
 
 class NewDirector extends Action
 {
     protected $resultPageFactory;
+
     public function __construct(Action\Context $context)
     {
         parent::__construct($context);
@@ -25,6 +23,7 @@ class NewDirector extends Action
             $director = $this->_objectManager->create('Magenest\Movie\Model\Director');
             $director->setData($directorDatas)->save();
             $resultRedirect = $this->resultRedirectFactory->create();
+
             return $resultRedirect->setPath('*/*/index');
         }
     }

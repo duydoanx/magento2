@@ -1,18 +1,18 @@
 <?php
 
-
 namespace Magenest\Movie\Observer;
 
-
 use Magento\Framework\Event\Observer;
+use Magento\Framework\ObjectManagerInterface;
 use Magento\Framework\Event\ObserverInterface;
 
 class MovieRating implements ObserverInterface
 {
     protected $_objectManager;
+
     public function __construct(
-        \Magento\Framework\ObjectManagerInterface $objectManager)
-    {
+        ObjectManagerInterface $objectManager
+    ) {
         $this->_objectManager = $objectManager;
     }
 
@@ -25,6 +25,7 @@ class MovieRating implements ObserverInterface
             $movie->save();
         }
         $observer->setData('test', 1234);
+
         return $this;
     }
 }

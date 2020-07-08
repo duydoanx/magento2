@@ -1,10 +1,10 @@
 <?php
 
-
 namespace Magenest\Movie\Model\Config\Source;
 
+use Magento\Framework\Data\OptionSourceInterface;
 
-class MovieSource implements \Magento\Framework\Data\OptionSourceInterface
+class MovieSource implements OptionSourceInterface
 {
 
     public function toOptionArray()

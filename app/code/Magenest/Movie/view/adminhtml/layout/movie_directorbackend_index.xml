@@ -4,11 +4,11 @@
     <body>
         <referenceContainer name="content">
             <block
-                class="Magenest\Movie\Block\Adminhtml\DirectorBackend"
-                name="adminhtml.block.movie.directorbackend.container">
+                    class="Magenest\Movie\Block\Adminhtml\DirectorBackend"
+                    name="adminhtml.block.movie.directorbackend.container">
                 <block
-                    class="Magenest\Movie\Block\Adminhtml\DirectorBackend\Grid"
-                    name="adminhtml.block.movie.directorbackend.grid" as="grid" />
+                        class="Magenest\Movie\Block\Adminhtml\DirectorBackend\Grid"
+                        name="adminhtml.block.movie.directorbackend.grid" as="grid" />
             </block>
         </referenceContainer>
     </body>

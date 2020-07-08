@@ -1,37 +1,37 @@
 <h2>Movie</h2>
 <style>
-    table, tr, th, td{
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-    }
+	table, tr, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		text-align: center;
+	}
 </style>
 <table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Rating</th>
-        <th>Director ID</th>
-        <th>Director Name</th>
-        <th>Actor</th>
-    </tr>
-<?php foreach ($block->getMovies() as $movie): ?>
-<tr>
-    <td><?php echo $movie['movie_id'] ?></td>
-    <td><?php echo $movie['name'] ?></td>
-    <td><?php echo $movie['description'] ?></td>
-    <td><?php echo $movie['rating'] ?></td>
-    <td><?php echo $movie['director_id'] ?></td>
-    <td><?php echo $movie['director_name'] ?></td>
-    <td>
-        <?php
-        if(isset($movie['actor_name']))
-        foreach ($movie['actor_name'] as $actor_name): ?>
-            <?php echo $actor_name ?>,
-        <?php endforeach; ?>
-    </td>
-</tr>
-<?php endforeach; ?>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Rating</th>
+		<th>Director ID</th>
+		<th>Director Name</th>
+		<th>Actor</th>
+	</tr>
+    <?php foreach ($block->getMovies() as $movie): ?>
+		<tr>
+			<td><?php echo $movie['movie_id'] ?></td>
+			<td><?php echo $movie['name'] ?></td>
+			<td><?php echo $movie['description'] ?></td>
+			<td><?php echo $movie['rating'] ?></td>
+			<td><?php echo $movie['director_id'] ?></td>
+			<td><?php echo $movie['director_name'] ?></td>
+			<td>
+                <?php
+                if (isset($movie['actor_name']))
+                    foreach ($movie['actor_name'] as $actor_name): ?>
+                        <?php echo $actor_name ?>,
+                    <?php endforeach; ?>
+			</td>
+		</tr>
+    <?php endforeach; ?>
 
 </table>

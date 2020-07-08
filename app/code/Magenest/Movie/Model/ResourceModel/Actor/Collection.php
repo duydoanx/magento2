@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Magenest\Movie\Model\ResourceModel\Actor;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;

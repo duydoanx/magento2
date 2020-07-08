@@ -10,6 +10,11 @@
                   instance="Magenest\Movie\Observer\MovieRating" />
     </event>
     <event name="admin_system_config_changed_section_movie">
-        <observer name="custom_admin_system_config_changed_section_movie" instance="Magenest\Movie\Observer\ConfigObserver"/>
+        <observer name="custom_admin_system_config_changed_section_movie"
+                  instance="Magenest\Movie\Observer\ConfigObserver" />
     </event>
+<!--    <event name="adminhtml_customer_save_after">-->
+<!--        <observer name="adminhtml_customer_save_avatar"-->
+<!--                  instance="Magenest\Movie\Observer\ChangePatchCustomerAvatar" />-->
+<!--    </event>-->
 </config>

@@ -1,20 +1,19 @@
 <?php
 
-
 namespace Magenest\Movie\Model;
 
-
-use Magento\Framework\Data\Collection\AbstractDb;
-use Magento\Framework\Model\AbstractModel;
-use Magento\Framework\Model\Context;
-use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
+use Magento\Framework\Model\Context;
+use Magento\Framework\Model\AbstractModel;
+use Magento\Framework\Data\Collection\AbstractDb;
+use Magento\Framework\Model\ResourceModel\AbstractResource;
 
 class Actor extends AbstractModel
 {
 
     /**
      * Movie constructor.
+     *
      * @param Context $context
      * @param Registry $registry
      * @param AbstractResource|null $resource
@@ -26,8 +25,8 @@ class Actor extends AbstractModel
         Registry $registry,
         AbstractResource $resource = null,
         AbstractDb $resourceCollection = null,
-        array $data = [])
-    {
+        array $data = []
+    ) {
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
 

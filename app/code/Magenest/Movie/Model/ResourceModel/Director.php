@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Magenest\Movie\Model\ResourceModel;
-
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 

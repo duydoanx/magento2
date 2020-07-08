@@ -1,14 +1,13 @@
 <?php
 
-
 namespace Magenest\Movie\Block\Adminhtml;
 
-
+use Magento\Backend\Block\Widget\Context;
 use Magento\Backend\Block\Widget\Grid\Container;
 
 class MovieBackend extends Container
 {
-    public function __construct(\Magento\Backend\Block\Widget\Context $context, array $data = [])
+    public function __construct(Context $context, array $data = [])
     {
         $this->_blockGroup = 'Magenest_Movie';
         $this->_controller = 'adminhtml_moviebackend';

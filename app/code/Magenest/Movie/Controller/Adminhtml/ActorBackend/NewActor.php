@@ -1,15 +1,13 @@
 <?php
 
-
 namespace Magenest\Movie\Controller\Adminhtml\ActorBackend;
 
-
 use Magento\Backend\App\Action;
-
 
 class NewActor extends Action
 {
     protected $resultPageFactory;
+
     public function __construct(Action\Context $context)
     {
         parent::__construct($context);
@@ -25,6 +23,7 @@ class NewActor extends Action
             $actor = $this->_objectManager->create('Magenest\Movie\Model\Actor');
             $actor->setData($actorDatas)->save();
             $resultRedirect = $this->resultRedirectFactory->create();
+
             return $resultRedirect->setPath('*/*/index');
         }
     }

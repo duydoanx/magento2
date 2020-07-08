@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Magenest\Movie\Block\Adminhtml;
-
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 

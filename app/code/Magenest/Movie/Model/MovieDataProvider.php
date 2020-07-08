@@ -1,17 +1,20 @@
 <?php
 
-
 namespace Magenest\Movie\Model;
 
-
-use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
 use Magento\Ui\DataProvider\AbstractDataProvider;
+use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
 
 class MovieDataProvider extends AbstractDataProvider
 {
-    public function __construct($name, $primaryFieldName, $requestFieldName, array $meta = [], array $data = [],
-                                CollectionFactory $movieCollectionFactory)
-    {
+    public function __construct(
+        $name,
+        $primaryFieldName,
+        $requestFieldName,
+        array $meta = [],
+        array $data = [],
+        CollectionFactory $movieCollectionFactory
+    ) {
         $this->collection = $movieCollectionFactory->create();
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }

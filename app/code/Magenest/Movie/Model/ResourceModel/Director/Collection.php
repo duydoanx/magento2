@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Magenest\Movie\Model\ResourceModel\Director;
-
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 

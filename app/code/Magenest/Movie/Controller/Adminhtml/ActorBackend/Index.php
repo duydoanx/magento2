@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Magenest\Movie\Controller\Adminhtml\ActorBackend;
-
 
 use Magento\Backend\App\Action;
 use Magento\Framework\View\Result\PageFactory;
@@ -22,6 +20,7 @@ class Index extends Action
         $resultPage = $this->pageResultFactory->create();
         $resultPage->setActiveMenu('Magenest_Movie::movie');
         $resultPage->getConfig()->getTitle()->prepend(__('Actor'));
+
         return $resultPage;
     }
 }
