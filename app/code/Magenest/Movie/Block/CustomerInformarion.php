@@ -12,7 +12,7 @@ class CustomerInformarion extends Template
     public function __construct(
         Template\Context $context,
         array $data = [],
-        \Magento\Customer\Model\Session $customerSession
+        \Magento\Customer\Model\SessionFactory $customerSession
     ) {
         parent::__construct($context, $data);
         $this->customerSession = $customerSession;
@@ -20,8 +20,8 @@ class CustomerInformarion extends Template
 
     public function getDetailsCurCustomer()
     {
-
-        $customer = $this->customerSession->getCustomer();
+        $customerFactory = $this->customerSession->create();
+        $customer = $customerFactory->getCustomer();
         $customer_avatar = $customer->getData('customer_avatar');
 
         return [
