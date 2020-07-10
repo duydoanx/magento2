@@ -1,0 +1,84 @@
+<style>
+	.button-modal button {
+		margin-left: 20px;
+	}
+</style>
+
+<div class="button-modal">
+	<button id="button-simple">Open Modal</button>
+	<button id="button-login-magento">Open Magento Login Modal</button>
+	<button>Open Custom Login Modal</button>
+</div>
+
+<div id="myModal">
+	<form id="form-login" class="form" action="index" method="get">
+		<fieldset class="fieldset">
+			<div class="field">
+				<label class="label" for="username-field">Username</label>
+				<div class="control">
+					<input class="input-text" id="username-field" name="username" type="email">
+				</div>
+			</div>
+			<div class="field">
+				<label class="label" for="password-field">Password</label>
+				<div class="control">
+					<input id="password-field" name="passowrd" type="password">
+				</div>
+			</div>
+<!--			<div class="actions-toolbar">-->
+<!--				<div class="primary">-->
+<!--					<button class="action submit primary" name="submit" type="submit">Submit</button>-->
+<!--				</div>-->
+<!--			</div>-->
+
+		</fieldset>
+	</form>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+        'Magento_Ui/js/modal/prompt',
+        "Magento_Ui/js/modal/modal"
+    ], function ($, alert, prompt, modal) {
+        $('#button-simple').click(function () {
+            alert({
+                title: $.mage.__('Hello'),
+                content: $.mage.__('Hello World!!'),
+                actions: {
+                    always: function () {
+                    }
+                }
+            });
+        });
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            innerScroll: true,
+            title: 'Login Modal Form',
+            closeText: 'Close',
+            buttons: [{
+                text: $.mage.__('Submit'),
+                class: 'primary submit action',
+                click: function (data) {
+                    this.closeModal();
+                    $('#form-login').submit();
+                    // document.getElementById("form-login").submit();
+                }
+            }],
+
+            escapeKey: function () {
+                if (this.options.isOpen && this.modal.find(document.activeElement).length ||
+                    this.options.isOpen && this.modal[0] === document.activeElement) {
+                    this.closeModal();
+                }
+            }
+        };
+        var popup = modal(options, $('#myModal'));
+        $("#button-login-magento").on("click", function () {
+            $('#myModal').modal('openModal');
+        });
+    })
+</script>

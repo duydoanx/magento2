@@ -7,11 +7,14 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <update handle="customer_account" />
+    <head>
+        <title>Modal Test Page</title>
+    </head>
     <body>
         <referenceContainer name="content">
-            <block before="customer_account_dashboard_info" class="Magenest\Movie\Block\CustomerInformarion" name="customer_information"
-                   template="Magenest_Movie::customer_information.phtml"/>
+            <block name="button_area" template="Magenest_FrontendTest::buttons.phtml"/>
+            <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+            <referenceBlock name="wishlist_sidebar" remove="true"/>
         </referenceContainer>
     </body>
 </page>
