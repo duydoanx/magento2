@@ -17,5 +17,4 @@ class Actor extends AbstractDb
     {
         $this->_init('magenest_actor', 'actor_id');
     }
-
 }

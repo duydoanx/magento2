@@ -2,8 +2,8 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">addformmovie.addform_data_source</item>
-            <item name="deps" xsi:type="string">addformmovie.addform_data_source</item>
+            <item name="provider" xsi:type="string">add_form_movie.add_form_data_source</item>
+            <item name="deps" xsi:type="string">add_form_movie.add_form_data_source</item>
         </item>
         <item name="label" xsi:type="string" translate="true">Movie Information</item>
 
@@ -14,10 +14,10 @@
             <item name="save" xsi:type="string">Magenest\Movie\Block\Adminhtml\SaveButton</item>
         </item>
     </argument>
-    <dataSource name="addform_data_source">
+    <dataSource name="add_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magenest\Movie\Model\MovieDataProvider</argument>
-            <argument name="name" xsi:type="string">addform_data_source</argument>
+            <argument name="name" xsi:type="string">add_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">movie_id</argument>
             <argument name="requestFieldName" xsi:type="string">movie_id</argument>
         </argument>
@@ -26,6 +26,9 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <submitUrl path="/moviebackend/save" />
+        </settings>
     </dataSource>
     <fieldset name="movie_details">
         <argument name="data" xsi:type="array">
@@ -48,7 +51,9 @@
         <field name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="required-entry" xsi:type="boolean">true</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Name</item>
                     <item name="formElement" xsi:type="string">input</item>
@@ -60,7 +65,6 @@
         <field name="description">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="required-entry" xsi:type="boolean">true</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Description</item>
                     <item name="formElement" xsi:type="string">input</item>
@@ -74,7 +78,7 @@
                 <item name="config" xsi:type="array">
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                        <item name="validate-digits" xsi:type="boolean">true</item>
+                        <item name="validate-number-range" xsi:type="string">1-5</item>
                     </item>
                     <item name="label" xsi:type="string" translate="true">Rating</item>
                     <item name="formElement" xsi:type="string">input</item>
@@ -85,13 +89,14 @@
         </field>
         <field name="director_id">
             <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magenest\Movie\Model\Director\Option</item>
                 <item name="config" xsi:type="array">
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                         <item name="validate-digits" xsi:type="boolean">true</item>
                     </item>
-                    <item name="label" xsi:type="string" translate="true">Director ID</item>
-                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Director</item>
+                    <item name="formElement" xsi:type="string">select</item>
                     <item name="source" xsi:type="string">movie</item>
                     <item name="dataScope" xsi:type="string">director_id</item>
                 </item>

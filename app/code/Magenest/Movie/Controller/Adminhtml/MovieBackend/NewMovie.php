@@ -26,8 +26,11 @@ class NewMovie extends Action
 
         $movieDatas = $this->getRequest()->getParam('movie_details');
         if (is_array($movieDatas)) {
+            /** @var \Magenest\Movie\Model\Movie $movie */
             $movie = $this->_objectManager->create('Magenest\Movie\Model\Movie');
-            $movie->setData($movieDatas)->save();
+            $movieResourceModel = $this->_objectManager->create('Magenest\Movie\Model\ResourceModel\Movie');
+            $movie->setData($movieDatas);
+            $movieResourceModel->save($movie);
             $resultRedirect = $this->resultRedirectFactory->create();
 
             return $resultRedirect->setPath('*/*/index');

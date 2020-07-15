@@ -5,10 +5,10 @@
         <observer name="customer_change_name"
                   instance="Magenest\Movie\Observer\CustomerChangeName" />
     </event>
-    <event name="movie_after_save">
-        <observer name="movie_save_observer"
-                  instance="Magenest\Movie\Observer\MovieRating" />
-    </event>
+<!--    <event name="movie_after_save">-->
+<!--        <observer name="movie_save_observer"-->
+<!--                  instance="Magenest\Movie\Observer\MovieRating" />-->
+<!--    </event>-->
     <event name="admin_system_config_changed_section_movie">
         <observer name="custom_admin_system_config_changed_section_movie"
                   instance="Magenest\Movie\Observer\ConfigObserver" />

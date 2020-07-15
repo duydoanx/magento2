@@ -9,6 +9,15 @@
                 resource="Magenest_Movie::movie"
         />
 
+        <add id="Magenest_Movie::moviesection"
+             title="Movie Section"
+             translate="title"
+             module="Magenest_Movie"
+             sortOrder="10"
+             parent="Magenest_Movie::movie"
+             resource="Magenest_Movie::moviesection"
+        />
+
         <add
                 id="Magenest_Movie::moviebackend"
                 title="Movie"
@@ -16,7 +25,7 @@
                 sortOrder="20"
                 resource="Magenest_Movie::movie"
                 action="movie/moviebackend"
-                parent="Magenest_Movie::movie"
+                parent="Magenest_Movie::moviesection"
         />
 
         <add
@@ -26,7 +35,7 @@
                 sortOrder="30"
                 resource="Magenest_Movie::movie"
                 action="movie/directorbackend"
-                parent="Magenest_Movie::movie"
+                parent="Magenest_Movie::moviesection"
         />
 
         <add
@@ -36,7 +45,27 @@
                 sortOrder="30"
                 resource="Magenest_Movie::movie"
                 action="movie/actorbackend"
-                parent="Magenest_Movie::movie"
+                parent="Magenest_Movie::moviesection"
+        />
+
+        <add id="Magenest_Movie::module_reports"
+             title="Module Report"
+             translate="title"
+             module="Magenest_Movie"
+             sortOrder="10"
+             parent="Magenest_Movie::movie"
+             resource="Magenest_Movie::module_reports"
+        />
+
+
+        <add
+                id="Magenest_Movie::module_report"
+                title="Report"
+                module="Magenest_Movie"
+                sortOrder="40"
+                resource="Magenest_Movie::movie"
+                action="movie/modulereport"
+                parent="Magenest_Movie::module_reports"
         />
     </menu>
 </config>

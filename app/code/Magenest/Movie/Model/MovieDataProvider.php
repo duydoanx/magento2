@@ -7,6 +7,16 @@ use Magenest\Movie\Model\ResourceModel\Movie\CollectionFactory;
 
 class MovieDataProvider extends AbstractDataProvider
 {
+    /**
+     * MovieDataProvider constructor.
+     *
+     * @param $name
+     * @param $primaryFieldName
+     * @param $requestFieldName
+     * @param array $meta
+     * @param array $data
+     * @param CollectionFactory $movieCollectionFactory
+     */
     public function __construct(
         $name,
         $primaryFieldName,

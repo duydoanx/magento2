@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Magenest_CRUDSample::crud_sample"
+                title="CRUD Sample"
+                module="Magenest_CRUDSample"
+                sortOrder="50"
+                resource="Magenest_CRUDSample::crud_sample"
+        />
+
+        <add
+                id="Magenest_CRUDSample::sample"
+                title="Sample"
+                module="Magenest_CRUDSample"
+                sortOrder="20"
+                resource="Magenest_CRUDSample::sample"
+                action="crudsample/sample"
+                parent="Magenest_CRUDSample::crud_sample"
+        />
+    </menu>
+</config>

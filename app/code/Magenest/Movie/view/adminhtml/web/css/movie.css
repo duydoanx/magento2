@@ -1,0 +1,11 @@
+.icon-star-fill{
+    color: #ffcc00;
+}
+.icon-star-empty{
+    color: #dfc49d;
+}
+
+.icon-star-empty, .icon-star-fill{
+    content: "\2605";
+    font-size: 30px;
+}

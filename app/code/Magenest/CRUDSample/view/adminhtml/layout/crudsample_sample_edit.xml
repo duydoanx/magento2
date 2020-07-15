@@ -2,11 +2,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="Magenest_Movie::css\movie.css"/>
+        <link src="Magenest_CRUDSample::js/bootstrap/sample-action.js"/>
     </head>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="movie_list"/>
+            <uiComponent name="sample_form"/>
         </referenceContainer>
     </body>
 </page>
